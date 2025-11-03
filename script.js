@@ -1,21 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Experience tabs functionality
-    const tabs = document.querySelectorAll('.experience-tab');
-    const contents = document.querySelectorAll('.experience-content');
+    // Experience item animations
+    const experienceItems = document.querySelectorAll('.experience-item');
     
-    tabs.forEach((tab, index) => {
-        tab.addEventListener('click', () => {
-            // Remove active class from all tabs and contents
-            tabs.forEach(t => t.classList.remove('active-tab'));
-            contents.forEach(c => c.classList.remove('active-content'));
-            
-            // Add active class to clicked tab and corresponding content
-            tab.classList.add('active-tab');
-            contents[index].classList.add('active-content');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
         });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
-    
-    // Smooth scrolling for anchor links
+
+    experienceItems.forEach(item => {
+        observer.observe(item);
+    });
+// Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
