@@ -40,7 +40,7 @@ class CustomFooter extends HTMLElement {
                 <a href="#"><i data-feather="mail"></i></a>
             </div>
             <div class="credit">
-                <p>Designed & Built by <a href="#">Brittany Chiang</a></p>
+                <p>Designed & Built by <a href="#">Kamil Karim</a></p>
             </div>
         `;
     }
