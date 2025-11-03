@@ -10,7 +10,7 @@ class CustomNavbar extends HTMLElement {
                     left: 0;
                     right: 0;
                     z-index: 100;
-                    background-color: rgba(10, 25, 47, 0.9);
+                    background-color: #0e172a;
                     backdrop-filter: blur(10px);
                     transition: transform 0.3s ease;
                 }
@@ -64,7 +64,7 @@ class CustomNavbar extends HTMLElement {
                     display: none;
                     background: none;
                     border: none;
-                    color: #ccd6f6;
+                    color: ##2596be;
                     cursor: pointer;
                 }
                 
@@ -80,7 +80,7 @@ class CustomNavbar extends HTMLElement {
             </style>
             <nav>
                 <div class="logo">
-                    <a href="#">BC</a>
+                    <a href="#">KK</a>
                 </div>
                 <button class="mobile-menu-btn">
                     <i data-feather="menu"></i>
