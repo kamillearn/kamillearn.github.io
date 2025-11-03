@@ -14,7 +14,6 @@ class CustomNavbar extends HTMLElement {
                     backdrop-filter: blur(10px);
                     transition: transform 0.3s ease;
                 }
-                
                 nav {
                     max-width: 1200px;
                     margin: 0 auto;
@@ -22,9 +21,9 @@ class CustomNavbar extends HTMLElement {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    transition: box-shadow 0.3s ease;
                 }
-                
-                .logo a {
+.logo a {
                     color: #64ffda;
                     font-weight: bold;
                     text-decoration: none;
@@ -36,19 +35,38 @@ class CustomNavbar extends HTMLElement {
                     list-style: none;
                     gap: 2rem;
                 }
-                
                 .nav-links a {
                     color: #ccd6f6;
                     text-decoration: none;
                     font-size: 0.9rem;
                     transition: color 0.3s ease;
+                    position: relative;
                 }
                 
                 .nav-links a:hover {
                     color: #64ffda;
                 }
-                
-                .nav-links .resume-btn {
+
+                .nav-links a.active {
+                    color: #64ffda;
+                }
+
+                .nav-links a.active::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #64ffda;
+                    bottom: -5px;
+                    left: 0;
+                    animation: fadeIn 0.3s ease;
+                }
+
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: scaleX(0); }
+                    to { opacity: 1; transform: scaleX(1); }
+                }
+.nav-links .resume-btn {
                     border: 1px solid #64ffda;
                     border-radius: 4px;
                     padding: 0.5rem 1rem;
