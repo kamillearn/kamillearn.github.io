@@ -64,7 +64,7 @@ class CustomNavbar extends HTMLElement {
                     display: none;
                     background: none;
                     border: none;
-                    color: ##2596be;
+                    color: #0e172a;
                     cursor: pointer;
                 }
                 
@@ -88,7 +88,7 @@ class CustomNavbar extends HTMLElement {
                 <ul class="nav-links">
                     <li><a href="#about"><span class="text-primary-500">01.</span> About</a></li>
                     <li><a href="#experience"><span class="text-primary-500">02.</span> Experience</a></li>
-                    <li><a href="#work"><span class="text-primary-500">03.</span> Work</a></li>
+                    <li><a href="#projects"><span class="text-primary-500">03.</span> Projects</a></li>
                     <li><a href="#contact"><span class="text-primary-500">04.</span> Contact</a></li>
                     <li><a href="#" class="resume-btn">Resume</a></li>
                 </ul>
