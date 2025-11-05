@@ -9,12 +9,14 @@ class CustomNavbar extends HTMLElement {
                     top: 0;
                     left: 0;
                     right: 0;
+                    width: 100%;
                     z-index: 100;
                     background-color: #0e172a;
                     backdrop-filter: blur(10px);
                     transition: transform 0.3s ease;
+                    overflow: hidden;
                 }
-                nav {
+nav {
                     max-width: 1200px;
                     margin: 0 auto;
                     padding: 1.5rem 2rem;
