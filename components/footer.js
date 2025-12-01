@@ -42,7 +42,7 @@ class CustomFooter extends HTMLElement {
                 <a href="abdulkamilkarim@gmail.com"><i data-feather="mail"></i></a>
             </div>
             <div class="credit">
-                <p><a href="#">© Kamil Karim. </a> All rights reserved.</p>
+                <p><a href="https://kamillearn.github.io/">© Kamil Karim. </a> All rights reserved.</p>
             </div>
         `;
     }
