@@ -35,11 +35,11 @@ class CustomFooter extends HTMLElement {
                 }
             </style>
             <div class="social-links">
-                <a href="https://github.com/kamillearn"><i data-feather="github"></i></a>
+                <a href="#"><i data-feather="github"></i></a>
                 
-                <a href="https://www.linkedin.com/in/kamil-karim/"><i data-feather="linkedin"></i></a>
+                <a href="#"><i data-feather="linkedin"></i></a>
 
-                <a href="abdulkamilkarim@gmail.com"><i data-feather="mail"></i></a>
+                <a href="#"><i data-feather="mail"></i></a>
             </div>
             <div class="credit">
                 <p><a href="https://kamillearn.github.io/">© Kamil Karim. </a> All rights reserved.</p>
