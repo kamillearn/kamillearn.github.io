@@ -1,4 +1,4 @@
-<h4 align="left"> Visit My Portfolio Website: (https://kamillearn.github.io/) or (https://kamilkarim.com) </h4>
+<h4 align="left"> Visit My Portfolio Website: https://kamillearn.github.io/ or https://kamilkarim.com </h4>
 
 
 <h3 align="left">Connect with me:</h3>
