@@ -14,12 +14,8 @@
       theme: {
         extend: {
           colors: {
-            primary: {
-              500: '#64ffda',
-            },
-            secondary: {
-              500: '#ccd6f6',
-            },
+            primary: { 500: '#64ffda' },
+            secondary: { 500: '#ccd6f6' },
             dark: {
               900: '#0e172a',
               800: '#112240',
@@ -31,45 +27,59 @@
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="bg-dark-900 text-secondary-500 font-sans overflow-x-hidden">
+
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="loader-logo">KK</div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
   <custom-navbar></custom-navbar>
 
-
-
   <main class="max-w-6xl mx-auto px-6 py-20">
+
     <!-- Hero Section -->
-    <section id="introduction" class="py-32" data-label="00. Introduction">
-      <h2
-        class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
-        <span class="text-primary-500 mr-2">00.</span> Introduction
+    <section id="introduction" class="py-32 min-h-screen flex flex-col justify-center" data-label="00. Introduction">
+      <p class="text-primary-500 mb-4 hero-animate" style="--delay: 0.1s; animation-play-state: paused;">
+        Hi, my name is
+      </p>
+      <h1 class="text-6xl md:text-7xl font-bold text-white mb-4 hero-animate" style="--delay: 0.25s; animation-play-state: paused;">
+        Kamil Karim.
+      </h1>
+      <h2 class="text-4xl md:text-5xl font-semibold text-gray-400 mb-6 hero-animate" style="--delay: 0.4s; animation-play-state: paused;">
+        I work in BI, data &amp; security.
       </h2>
-      <p class="text-primary-500 mb-4">Hi, my name is</p>
-      <h1 class="text-6xl font-bold text-white mb-4">Kamil Karim.</h1>
-      <h2 class="text-5xl font-semibold text-gray-400 mb-6">I work in BI, data & security.</h2>
-      <p class="max-w-xl text-lg mb-10">
-        I’m an IT Security Working Student and B.Sc. Cyber Security Management student (3rd semester) focused on
-        Security,
-        Business
-        Intelligence and Data Analytics. I build reliable dashboards and data workflows, write clear
+      <p class="max-w-xl text-lg mb-10 hero-animate" style="--delay: 0.55s; animation-play-state: paused;">
+        I'm an IT Security Working Student and B.Sc. Cyber Security Management student (3rd semester) focused on
+        Security, Business Intelligence and Data Analytics. I build reliable dashboards and data workflows, write clear
         documentation, and support teams with structured, dependable delivery.
       </p>
-      <a href="#about"
-        class="border border-primary-500 text-primary-500 px-6 py-3 rounded hover:bg-primary-500/10 transition-all duration-300 inline-block w-max">
-        Let’s Begin
-      </a>
+      <div class="hero-animate" style="--delay: 0.7s; animation-play-state: paused;">
+        <a href="#about"
+          class="cta-btn border border-primary-500 text-primary-500 px-7 py-3 rounded hover:bg-primary-500/10 transition-all duration-300 inline-block w-max">
+          Let's Begin
+        </a>
+      </div>
     </section>
+
     <!-- About Section -->
     <section id="about" class="py-32" data-label="01. About Me">
       <h2
-        class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
+        class="reveal flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
         <span class="text-primary-500 mr-2">01.</span> About Me
       </h2>
       <div class="flex flex-col md:flex-row gap-12">
-        <div class="md:w-2/3">
-          <p class="mb-4">I’m an IT Security Working Student and B.Sc. Cyber Security Management student
+        <div class="md:w-2/3 reveal" data-delay="0.15">
+          <p class="mb-4">I'm an IT Security Working Student and B.Sc. Cyber Security Management student
             (3rd semester), passionate about protecting information systems, maintaining secure
             infrastructures, and improving how people interact with technology through clear processes and
             documentation.</p>
@@ -80,56 +90,32 @@
           <p class="mb-8">Today, my focus is on information security management, network safety, vulnerability
             analysis, and secure IT operations. I enjoy bridging the gap between technical implementation
             and organizational awareness—helping teams stay secure, compliant, and informed.</p>
-
-          <!-- Tools
-                    <p>Tools i work with:</p>
-                    <ul class="grid grid-cols-2 mt-4 gap-2 mt-5">
-                        <li class="flex items-center">
-                            <span class="text-primary-500 mr-2">▹</span> Jira
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-primary-500 mr-2">▹</span> Python
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-primary-500 mr-2">▹</span> Azure/VPN
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-primary-500 mr-2">▹</span> ServiceNow
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-primary-500 mr-2">▹</span> Documentation
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-primary-500 mr-2">▹</span> Security Policy
-                        </li>
-                    </ul>  -->
-
         </div>
-        <div class="md:w-1/3 relative group">
-          <div
-            class="w-full h-auto rounded overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded before:border-2 before:border-primary-500 before:translate-x-4 before:translate-y-4 before:z-[-1] before:transition-all before:duration-300 group-hover:before:translate-x-3 group-hover:before:translate-y-3">
+        <div class="md:w-1/3 reveal-right" data-delay="0.25">
+          <div class="profile-wrapper">
             <img src="https://github.com/kamillearn/kamillearn.github.io/blob/main/profile.jpeg?raw=true"
-              alt="Kamil Karim" class="w-full h-auto rounded grayscale hover:grayscale-0 transition-all duration-300">
+              alt="Kamil Karim">
           </div>
         </div>
       </div>
     </section>
+
     <!-- Experience Section -->
     <section id="experience" class="py-32" data-label="02. Experience">
       <h2
-        class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
+        class="reveal flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
         <span class="text-primary-500 mr-2">02.</span> Where I've Worked
       </h2>
       <div class="space-y-8">
 
         <!-- Heitkamp & Thumann Group -->
         <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
-          <div class="bg-dark-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="bg-dark-800 p-8 rounded-lg shadow-lg">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 class="text-xl font-medium text-white">IT Working Student
-                <span class="text-primary-500">@ Heitkamp & Thumann Group</span>
+                <span class="text-primary-500">@ Heitkamp &amp; Thumann Group</span>
               </h3>
-              <p class="text-sm text-gray-400">Dec. 2024 - Present</p>
+              <p class="text-sm text-gray-400">Dec. 2024 – Present</p>
             </div>
             <ul class="space-y-3 mb-4">
               <li class="flex items-start">
@@ -138,8 +124,7 @@
               </li>
               <li class="flex items-start">
                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Assist in implementing and maintaining security policies, access controls, and compliance
-                  documentation.</span>
+                <span>Assist in implementing and maintaining security policies, access controls, and compliance documentation.</span>
               </li>
               <li class="flex items-start">
                 <span class="text-primary-500 mr-2 mt-1">▹</span>
@@ -151,11 +136,9 @@
               </li>
               <li class="flex items-start">
                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Collaborate with cross-functional teams to improve process reliability and data protection
-                  practices.</span>
+                <span>Collaborate with cross-functional teams to improve process reliability and data protection practices.</span>
               </li>
             </ul>
-
             <div class="flex flex-wrap gap-2 mt-5">
               <span class="tech-tag">Documentation</span>
               <span class="tech-tag">Microsoft Word</span>
@@ -169,30 +152,27 @@
           </div>
         </div>
 
-        <!-- Amazon & Ebay Marketplace Performance Manager (Self-Employed) -->
+        <!-- Amazon & Ebay -->
         <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
-          <div class="bg-dark-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="bg-dark-800 p-8 rounded-lg shadow-lg">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 class="text-xl font-medium text-white">Amazon & Ebay Marketplace Performance Manager (Self-Employed)
+              <h3 class="text-xl font-medium text-white">Amazon &amp; Ebay Marketplace Performance Manager (Self-Employed)
                 <span class="text-primary-500">@ Amazon FBA, Ebay Ads</span>
               </h3>
-              <p class="text-sm text-gray-400">April 2025 - Present</p>
+              <p class="text-sm text-gray-400">April 2025 – Present</p>
             </div>
             <ul class="space-y-3 mb-4">
               <li class="flex items-start">
                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Managed the end-to-end sales fulfillment process, including product research, inventory
-                  monitoring, and listing optimization.</span>
+                <span>Managed the end-to-end sales fulfillment process, including product research, inventory monitoring, and listing optimization.</span>
               </li>
               <li class="flex items-start">
                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Managing eBay storefront; utilized "Promoted Listings Standard" to increase sales velocity and
-                  market share.</span>
+                <span>Managing eBay storefront; utilized "Promoted Listings Standard" to increase sales velocity and market share.</span>
               </li>
               <li class="flex items-start">
                 <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Created ad creatives including visuals, ad copy, and A/B variations to test performance and
-                  engagement.</span>
+                <span>Created ad creatives including visuals, ad copy, and A/B variations to test performance and engagement.</span>
               </li>
               <li class="flex items-start">
                 <span class="text-primary-500 mr-2 mt-1">▹</span>
@@ -203,7 +183,6 @@
                 <span>Performing deep-dive keyword and competitor analysis to identify and exploit market gaps.</span>
               </li>
             </ul>
-
             <div class="flex flex-wrap gap-2 mt-5">
               <span class="tech-tag">Amazon Seller Central</span>
               <span class="tech-tag">eBay Storefront</span>
@@ -218,50 +197,24 @@
           </div>
         </div>
 
-        <!-- Independent E-Commerce Projects -->
+        <!-- E-Commerce -->
         <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
-          <div class="bg-dark-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="bg-dark-800 p-8 rounded-lg shadow-lg">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 class="text-xl font-medium text-white">E-Commerce Manager & Performance Marketer (Self-Employed)
-                <span class="text-primary-500">@ Shopify, Google Ads, Meta Ads, Pinterest Ads, Tiktok Ads</span>
+              <h3 class="text-xl font-medium text-white">E-Commerce Manager &amp; Performance Marketer (Self-Employed)
+                <span class="text-primary-500">@ Shopify, Google Ads, Meta Ads, Pinterest Ads, TikTok Ads</span>
               </h3>
-              <p class="text-sm text-gray-400">April 2021 - Aug. 2025</p>
+              <p class="text-sm text-gray-400">April 2021 – Aug. 2025</p>
             </div>
             <ul class="space-y-3 mb-4">
-              <li class="flex items-start">
-                <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Built and managed several Shopify stores (product research, design, payments & shipping
-                  setup).</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Planned, launched, and optimized campaigns across Google, Meta, Pinterest & Tiktok.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Created ad creatives including visuals, ad copy, and A/B variations to test performance and
-                  engagement.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Developed funnel-based ad strategies and conducted A/B testing to increase ROAS and conversion
-                  rates.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Wrote and designed advertorials and presell pages to warm up traffic and improve conversion
-                  rates.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Managed remarketing campaigns to re-engage visitors and reduce acquisition costs.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary-500 mr-2 mt-1">▹</span>
-                <span>Analyzed KPIs such as CTR, CPA, ROAS, and conversion rate.</span>
-              </li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span><span>Built and managed several Shopify stores (product research, design, payments &amp; shipping setup).</span></li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span><span>Planned, launched, and optimized campaigns across Google, Meta, Pinterest &amp; TikTok.</span></li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span><span>Created ad creatives including visuals, ad copy, and A/B variations to test performance and engagement.</span></li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span><span>Developed funnel-based ad strategies and conducted A/B testing to increase ROAS and conversion rates.</span></li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span><span>Wrote and designed advertorials and presell pages to warm up traffic and improve conversion rates.</span></li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span><span>Managed remarketing campaigns to re-engage visitors and reduce acquisition costs.</span></li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span><span>Analyzed KPIs such as CTR, CPA, ROAS, and conversion rate.</span></li>
             </ul>
-
             <div class="flex flex-wrap gap-2 mt-5">
               <span class="tech-tag">Shopify</span>
               <span class="tech-tag">Meta Business Suite</span>
@@ -275,15 +228,12 @@
               <span class="tech-tag">Remarketing</span>
               <span class="tech-tag">Campaign Optimization</span>
             </div>
-
           </div>
         </div>
 
-
         <!-- BI2run -->
         <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
-          <div
-            class="bg-dark-800 p-8 rounded-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <div class="bg-dark-800 p-8 rounded-lg shadow-lg">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 class="text-xl font-medium text-white">
                 Business Intelligence Consultant
@@ -291,20 +241,12 @@
               </h3>
               <p class="text-sm text-gray-400">May 2024 – Sep. 2024</p>
             </div>
-
             <ul class="space-y-3 text-slate-300">
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Supported
-                clients in developing and implementing tailored Business Intelligence solutions.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Operated,
-                maintained, and optimized BI environments to ensure performance and reliability.</li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Designed
-                interactive dashboards and data visualizations to
-                support decision-making.</li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Collaborated
-                closely with stakeholders to translate business goals into analytical insights.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Supported clients in developing and implementing tailored Business Intelligence solutions.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Operated, maintained, and optimized BI environments to ensure performance and reliability.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Designed interactive dashboards and data visualizations to support decision-making.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Collaborated closely with stakeholders to translate business goals into analytical insights.</li>
             </ul>
-
             <div class="flex flex-wrap gap-2 mt-5">
               <span class="tech-tag">Qlik Sense</span>
               <span class="tech-tag">QlikView</span>
@@ -318,8 +260,7 @@
 
         <!-- Wolfgang Westarp -->
         <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
-          <div
-            class="bg-dark-800 p-8 rounded-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <div class="bg-dark-800 p-8 rounded-lg shadow-lg">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 class="text-xl font-medium text-white">
                 Business Intelligence Consultant
@@ -327,26 +268,13 @@
               </h3>
               <p class="text-sm text-gray-400">July 2023 – Feb. 2024</p>
             </div>
-
             <ul class="space-y-3 text-slate-300">
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Developed
-                interactive dashboards and reports using Qlik Sense and
-                QlikView.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Integrated
-                NPrinting for automated data reporting and distribution.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Improved the
-                performance and user experience of existing Qlik
-                applications.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Implemented
-                security and access controls for BI environments.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Contributed to
-                the overall data governance and documentation processes.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Developed interactive dashboards and reports using Qlik Sense and QlikView.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Integrated NPrinting for automated data reporting and distribution.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Improved the performance and user experience of existing Qlik applications.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Implemented security and access controls for BI environments.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Contributed to the overall data governance and documentation processes.</li>
             </ul>
-
             <div class="flex flex-wrap gap-2 mt-5">
               <span class="tech-tag">Qlik Sense</span>
               <span class="tech-tag">QlikView</span>
@@ -360,32 +288,20 @@
 
         <!-- Data Analytics Trainee -->
         <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
-          <div
-            class="bg-dark-800 p-8 rounded-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <div class="bg-dark-800 p-8 rounded-lg shadow-lg">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 class="text-xl font-medium text-white">
                 Data Analytics Trainee <span class="text-primary-500">@ neuefische GmbH</span>
               </h3>
               <p class="text-sm text-gray-400">Feb. 2023 – May 2023</p>
             </div>
-
             <ul class="space-y-3 text-slate-300">
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Completed a
-                full-time, project-based data analytics bootcamp with a focus on
-                Python, SQL, and data visualization.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Collected,
-                cleaned, and analyzed large datasets for exploratory and statistical insights.</li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Created
-                interactive dashboards and visual reports for real-world business
-                problems.</li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Presented
-                data-driven solutions to non-technical stakeholders using clear, actionable insights.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Collaborated
-                in agile teams on end-to-end data projects, from exploration to presentation.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Completed a full-time, project-based data analytics bootcamp with a focus on Python, SQL, and data visualization.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Collected, cleaned, and analyzed large datasets for exploratory and statistical insights.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Created interactive dashboards and visual reports for real-world business problems.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Presented data-driven solutions to non-technical stakeholders using clear, actionable insights.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Collaborated in agile teams on end-to-end data projects, from exploration to presentation.</li>
             </ul>
-
             <div class="flex flex-wrap gap-2 mt-5">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Pandas</span>
@@ -401,8 +317,7 @@
 
         <!-- IT Support Analyst -->
         <div class="experience-item opacity-0 transition-all duration-500 ease-out transform translate-y-8">
-          <div
-            class="bg-dark-800 p-8 rounded-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <div class="bg-dark-800 p-8 rounded-lg shadow-lg">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 class="text-xl font-medium text-white">
                 IT Support Analyst
@@ -410,25 +325,13 @@
               </h3>
               <p class="text-sm text-gray-400">Dec. 2021 – Dec. 2022</p>
             </div>
-
             <ul class="space-y-3 text-slate-300">
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Provided
-                technical support for BASF employees in a corporate IT environment.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Diagnosed and
-                resolved hardware, software, and network issues via
-                remote support tools.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Performed user
-                account management, password resets, and access maintenance.</li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Escalated
-                complex incidents to higher-level teams and documented resolutions in
-                ServiceNow.
-              </li>
-              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Contributed to
-                IT service improvements by documenting processes and common fixes.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Provided technical support for BASF employees in a corporate IT environment.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Diagnosed and resolved hardware, software, and network issues via remote support tools.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Performed user account management, password resets, and access maintenance.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Escalated complex incidents to higher-level teams and documented resolutions in ServiceNow.</li>
+              <li class="flex items-start"><span class="text-primary-500 mr-2 mt-1">▹</span>Contributed to IT service improvements by documenting processes and common fixes.</li>
             </ul>
-
             <div class="flex flex-wrap gap-2 mt-5">
               <span class="tech-tag">ServiceNow</span>
               <span class="tech-tag">Azure/VPN</span>
@@ -442,53 +345,43 @@
 
       </div>
     </section>
+
     <!-- Projects Section -->
     <section id="projects" class="py-32" data-label="03. Projects">
       <h2
-        class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
+        class="reveal flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
         <span class="text-primary-500 mr-2">03.</span> Some Things I've Built
       </h2>
       <div class="space-y-24">
 
         <div class="project-card group">
           <div class="project-image">
-            <img
-              src="https://github.com/kamillearn/kamillearn.github.io/blob/main/images/education_excellence.jpg?raw=true"
-              alt="Education Excellence Capstone Project" class="w-full h-auto rounded">
+            <img src="https://github.com/kamillearn/kamillearn.github.io/blob/main/images/education_excellence.jpg?raw=true"
+              alt="Education Excellence Capstone Project">
           </div>
-
           <div class="project-content">
-            <p class="text-primary-500 mb-2">Capstone Project</p>
+            <p class="text-primary-500 mb-2 text-sm tracking-widest uppercase">Capstone Project</p>
             <h3 class="text-2xl font-semibold text-white mb-4">
-              Education Excellence – Comparative Study of Germany’s Education System
+              Education Excellence – Comparative Study of Germany's Education System
             </h3>
-
-            <div class="bg-dark-800 p-6 rounded mb-4">
-              <p>
-                A data-driven analysis of <strong>Germany’s 16 federal states </strong> to evaluate the
+            <div class="bg-dark-800 p-6 rounded-lg mb-4 shadow-lg">
+              <p>A data-driven analysis of <strong>Germany's 16 federal states</strong> to evaluate the
                 <strong>quality of education</strong> from <strong>2010 to 2022</strong>.
                 The study examined correlations between <strong>school investments</strong>,
-                <strong>teacher ratios</strong>, and <strong>graduation rates</strong> using public
-                datasets.
-              </p>
-              <p class="mt-3 text-slate-300">
-                Results showed that increased investment and smaller class sizes generally
-                lead to stronger academic outcomes, while the overall quality of education
-                in Germany has steadily improved.
-              </p>
+                <strong>teacher ratios</strong>, and <strong>graduation rates</strong> using public datasets.</p>
+              <p class="mt-3 text-slate-300">Results showed that increased investment and smaller class sizes generally
+                lead to stronger academic outcomes, while the overall quality of education in Germany has steadily improved.</p>
             </div>
-
-            <div class="flex flex-wrap gap-2 mt-5">
+            <div class="flex flex-wrap gap-2 mt-5 justify-end">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Excel</span>
               <span class="tech-tag">Power BI</span>
               <span class="tech-tag">Data Visualization</span>
               <span class="tech-tag">Statistical Analysis</span>
             </div>
-
-            <div class="flex gap-4 mt-4">
+            <div class="flex gap-4 mt-4 justify-end">
               <a href="https://github.com/kamillearn/Education-Excellence"
-                class="text-white hover:text-primary-500 transition-colors duration-300">
+                class="text-secondary-500 hover:text-primary-500 transition-colors duration-300" target="_blank">
                 <i data-feather="external-link"></i>
               </a>
             </div>
@@ -497,33 +390,23 @@
 
         <div class="project-card group">
           <div class="project-image">
-            <img
-              src="https://github.com/kamillearn/kamillearn.github.io/blob/main/images/winning_space_race.jpg?raw=true"
-              alt="IBM Applied Data Science Capstone Project – SpaceX" class="w-full h-auto rounded">
+            <img src="https://github.com/kamillearn/kamillearn.github.io/blob/main/images/winning_space_race.jpg?raw=true"
+              alt="IBM Applied Data Science Capstone Project – SpaceX">
           </div>
-
           <div class="project-content">
-            <p class="text-primary-500 mb-2">Capstone Project</p>
+            <p class="text-primary-500 mb-2 text-sm tracking-widest uppercase">Capstone Project</p>
             <h3 class="text-2xl font-semibold text-white mb-4">
-              IBM Applied Data Science Capstone Project – SpaceX
+              IBM Applied Data Science Capstone – SpaceX
             </h3>
-
-            <div class="bg-dark-800 p-6 rounded mb-4">
-              <p>
-                This project simulated the role of a <strong>Data Scientist</strong> at a startup
-                competing with <strong>SpaceX</strong>. I worked through the
-                <strong>data science lifecycle</strong> using real launch data — collecting,
-                cleaning, and analyzing datasets to identify patterns linked to
-                <strong>successful rocket launches</strong>.
-              </p>
-              <p class="mt-3 text-slate-300">
-                It strengthened my skills in <strong>data wrangling</strong>,
-                <strong>exploratory analysis</strong>, and
-                <strong>predictive modeling</strong> with real aerospace data.
-              </p>
+            <div class="bg-dark-800 p-6 rounded-lg mb-4 shadow-lg">
+              <p>This project simulated the role of a <strong>Data Scientist</strong> at a startup competing with
+                <strong>SpaceX</strong>. I worked through the <strong>data science lifecycle</strong> using real launch
+                data — collecting, cleaning, and analyzing datasets to identify patterns linked to
+                <strong>successful rocket launches</strong>.</p>
+              <p class="mt-3 text-slate-300">It strengthened my skills in <strong>data wrangling</strong>,
+                <strong>exploratory analysis</strong>, and <strong>predictive modeling</strong> with real aerospace data.</p>
             </div>
-
-            <div class="flex flex-wrap gap-2 mt-5">
+            <div class="flex flex-wrap gap-2 mt-5 justify-end">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Pandas</span>
               <span class="tech-tag">Scikit-learn</span>
@@ -531,14 +414,9 @@
               <span class="tech-tag">IBM Watson Studio</span>
               <span class="tech-tag">Data Visualization</span>
             </div>
-
-            <div class="flex gap-4 mt-4">
-              <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
-                <i data-feather="github"></i>
-              </a>
-              <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
-                <i data-feather="external-link"></i>
-              </a>
+            <div class="flex gap-4 mt-4 justify-end">
+              <a href="#" class="text-secondary-500 hover:text-primary-500 transition-colors duration-300"><i data-feather="github"></i></a>
+              <a href="#" class="text-secondary-500 hover:text-primary-500 transition-colors duration-300"><i data-feather="external-link"></i></a>
             </div>
           </div>
         </div>
@@ -546,21 +424,17 @@
         <div class="project-card group">
           <div class="project-image">
             <img src="https://github.com/kamillearn/kamillearn.github.io/blob/main/images/honey_pot.jpg?raw=true"
-              alt="Azure Sentinel Threat Hunting with Honeypot" class="w-full h-auto rounded">
+              alt="Azure Sentinel Threat Hunting with Honeypot">
           </div>
           <div class="project-content">
-            <p class="text-primary-500 mb-2">Data Project</p>
-            <h3 class="text-2xl font-semibold text-white mb-4">Azure Sentinel Threat Hunting with Honeypot
-            </h3>
-            <div class="bg-dark-800 p-6 rounded mb-4">
-              <p>I built a virtual machine in Microsoft Azure to act as a honeypot, designed to attract
-                and record cyberattacks from around the world.
-                The data was sent to Azure Sentinel, where I created dashboards to track and visualize
-                attack activity in real time.</p>
+            <p class="text-primary-500 mb-2 text-sm tracking-widest uppercase">Security Project</p>
+            <h3 class="text-2xl font-semibold text-white mb-4">Azure Sentinel Threat Hunting with Honeypot</h3>
+            <div class="bg-dark-800 p-6 rounded-lg mb-4 shadow-lg">
+              <p>I built a virtual machine in Microsoft Azure to act as a honeypot, designed to attract and record
+                cyberattacks from around the world. The data was sent to Azure Sentinel, where I created dashboards
+                to track and visualize attack activity in real time.</p>
             </div>
-
-
-            <div class="flex flex-wrap gap-2 mt-5">
+            <div class="flex flex-wrap gap-2 mt-5 justify-end">
               <span class="tech-tag">Azure</span>
               <span class="tech-tag">Sentinel</span>
               <span class="tech-tag">PowerShell</span>
@@ -568,88 +442,56 @@
               <span class="tech-tag">Virtual Machines</span>
               <span class="tech-tag">Log Analytics</span>
             </div>
-
-            <div class="flex gap-4">
-              <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
-                <i data-feather="github"></i>
-              </a>
+            <div class="flex gap-4 mt-4 justify-end">
+              <a href="#" class="text-secondary-500 hover:text-primary-500 transition-colors duration-300"><i data-feather="github"></i></a>
               <a href="https://github.com/kamillearn/Threat-Hunting-with-Honeypots/tree/main"
-                class="text-white hover:text-primary-500 transition-colors duration-300">
+                class="text-secondary-500 hover:text-primary-500 transition-colors duration-300" target="_blank">
                 <i data-feather="external-link"></i>
               </a>
             </div>
           </div>
         </div>
 
-
-
         <div class="project-card group">
           <div class="project-image">
             <img src="https://github.com/kamillearn/kamillearn.github.io/blob/main/images/happy_muesli.jpg?raw=true"
-              alt="Happy Muesli – EDA & KPI" class="w-full h-auto rounded">
+              alt="Happy Muesli – EDA & KPI">
           </div>
-
           <div class="project-content">
-            <p class="text-primary-500 mb-2">Data Project</p>
-            <h3 class="text-2xl font-semibold text-white mb-4">
-              Happy Muesli — EDA & KPI
-            </h3>
-
-            <div class="bg-dark-800 p-6 rounded mb-4">
-              <p>
-                We analyzed a muesli distributor’s order-to-delivery process and built simple KPIs to
-                track performance. Using historic orders (with partial timestamps) we rebuilt each step
-                — Order → Ready to Ship → On Truck → Delivered — including real-world rules like
-                weekends, truck days (Mon/Wed/Fri) and Express processing.
-              </p>
+            <p class="text-primary-500 mb-2 text-sm tracking-widest uppercase">Data Project</p>
+            <h3 class="text-2xl font-semibold text-white mb-4">Happy Muesli — EDA &amp; KPI</h3>
+            <div class="bg-dark-800 p-6 rounded-lg mb-4 shadow-lg">
+              <p>We analyzed a muesli distributor's order-to-delivery process and built simple KPIs to track performance.
+                Using historic orders (with partial timestamps) we rebuilt each step — Order → Ready to Ship → On Truck →
+                Delivered — including real-world rules like weekends, truck days (Mon/Wed/Fri) and Express processing.</p>
             </div>
-
-            <div class="flex flex-wrap gap-2 mt-5">
+            <div class="flex flex-wrap gap-2 mt-5 justify-end">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Pandas</span>
               <span class="tech-tag">Jupyter</span>
               <span class="tech-tag">Excel/CSV</span>
               <span class="tech-tag">Data Visualization</span>
             </div>
-
-            <div class="flex gap-4 mt-4">
-              <!-- add links if available -->
-              <!-- <a href="YOUR_REPO" class="text-white hover:text-primary-500 transition-colors duration-300" target="_blank"><i data-feather="github"></i></a> -->
-              <!-- <a href="YOUR_DASHBOARD" class="text-white hover:text-primary-500 transition-colors duration-300" target="_blank"><i data-feather="external-link"></i></a> -->
-            </div>
           </div>
         </div>
-
 
         <div class="project-card group">
           <div class="project-image">
             <img src="https://github.com/kamillearn/kamillearn.github.io/blob/main/images/us_blizzard_19.jpg?raw=true"
-              alt="US Blizzard ’19 – Flights and Weather Data Analysis" class="w-full h-auto rounded">
+              alt="US Blizzard '19 – Flights and Weather Data Analysis">
           </div>
-
           <div class="project-content">
-            <p class="text-primary-500 mb-2">Data Project</p>
-            <h3 class="text-2xl font-semibold text-white mb-4">
-              US Blizzard ’19 – Flights and Weather Data Analysis
-            </h3>
-
-            <div class="bg-dark-800 p-6 rounded mb-4">
-              <p>
-                We analyzed how <strong>extreme weather in North America</strong> during the
-                <strong>March 2019 blizzard</strong> affected
-                <strong>flight delays and cancellations</strong>.
-                Using <strong>flight performance</strong> and <strong>weather data</strong>, our
-                analysis
-                revealed how snow, wind, and temperature variations impacted air traffic across
-                different cities.
-              </p>
-              <p class="mt-3 text-slate-300">
-                The study highlighted key weather factors behind major disruptions and demonstrated
-                how data analytics can help predict and manage such events in the future.
-              </p>
+            <p class="text-primary-500 mb-2 text-sm tracking-widest uppercase">Data Project</p>
+            <h3 class="text-2xl font-semibold text-white mb-4">US Blizzard '19 – Flights &amp; Weather Analysis</h3>
+            <div class="bg-dark-800 p-6 rounded-lg mb-4 shadow-lg">
+              <p>We analyzed how <strong>extreme weather in North America</strong> during the <strong>March 2019 blizzard</strong>
+                affected <strong>flight delays and cancellations</strong>. Using <strong>flight performance</strong> and
+                <strong>weather data</strong>, our analysis revealed how snow, wind, and temperature variations impacted
+                air traffic across different cities.</p>
+              <p class="mt-3 text-slate-300">The study highlighted key weather factors behind major disruptions and
+                demonstrated how data analytics can help predict and manage such events in the future.</p>
             </div>
-
-            <div class="flex flex-wrap gap-2 mt-5">
+            <div class="flex flex-wrap gap-2 mt-5 justify-end">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Pandas</span>
               <span class="tech-tag">NumPy</span>
@@ -657,109 +499,87 @@
               <span class="tech-tag">Data Visualization</span>
               <span class="tech-tag">Jupyter</span>
             </div>
-
-            <div class="flex gap-4 mt-4">
-              <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
-                <i data-feather="github"></i>
-              </a>
-              <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
-                <i data-feather="external-link"></i>
-              </a>
+            <div class="flex gap-4 mt-4 justify-end">
+              <a href="#" class="text-secondary-500 hover:text-primary-500 transition-colors duration-300"><i data-feather="github"></i></a>
+              <a href="#" class="text-secondary-500 hover:text-primary-500 transition-colors duration-300"><i data-feather="external-link"></i></a>
             </div>
           </div>
         </div>
 
-
         <div class="project-card group">
           <div class="project-image">
             <img src="https://github.com/kamillearn/kamillearn.github.io/blob/main/images/covid.jpg?raw=true"
-              alt="COVID-19 Data Exploration" class="w-full h-auto rounded">
+              alt="COVID-19 Data Exploration">
           </div>
-
           <div class="project-content">
-            <p class="text-primary-500 mb-2">Data Project</p>
-            <h3 class="text-2xl font-semibold text-white mb-4">
-              COVID-19 Data Exploration
-            </h3>
-
-            <div class="bg-dark-800 p-6 rounded mb-4">
-              <p>
-                We analyzed <strong>global COVID-19 data</strong> using
-                <strong>SQL in Google BigQuery</strong> to uncover trends in
-                <strong>cases, deaths,</strong> and <strong>vaccination rates</strong>.
-                The project explored how the pandemic evolved across countries and how
-                vaccine rollout correlated with reduced infection rates.
-              </p>
-              <p class="mt-3 text-slate-300">
-                The goal was to apply <strong>SQL data analysis</strong> on large,
-                real-world datasets and present insights through clear summaries and visuals.
-              </p>
+            <p class="text-primary-500 mb-2 text-sm tracking-widest uppercase">Data Project</p>
+            <h3 class="text-2xl font-semibold text-white mb-4">COVID-19 Data Exploration</h3>
+            <div class="bg-dark-800 p-6 rounded-lg mb-4 shadow-lg">
+              <p>We analyzed <strong>global COVID-19 data</strong> using <strong>SQL in Google BigQuery</strong> to
+                uncover trends in <strong>cases, deaths,</strong> and <strong>vaccination rates</strong>. The project
+                explored how the pandemic evolved across countries and how vaccine rollout correlated with reduced
+                infection rates.</p>
+              <p class="mt-3 text-slate-300">The goal was to apply <strong>SQL data analysis</strong> on large,
+                real-world datasets and present insights through clear summaries and visuals.</p>
             </div>
-
-            <div class="flex flex-wrap gap-2 mt-5">
+            <div class="flex flex-wrap gap-2 mt-5 justify-end">
               <span class="tech-tag">SQL</span>
               <span class="tech-tag">Google BigQuery</span>
               <span class="tech-tag">Data Cleaning</span>
               <span class="tech-tag">Data Analysis</span>
             </div>
-
-            <div class="flex gap-4 mt-4">
-              <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
-                <i data-feather="github"></i>
-              </a>
-              <a href="#" class="text-white hover:text-primary-500 transition-colors duration-300">
-                <i data-feather="external-link"></i>
-              </a>
+            <div class="flex gap-4 mt-4 justify-end">
+              <a href="#" class="text-secondary-500 hover:text-primary-500 transition-colors duration-300"><i data-feather="github"></i></a>
+              <a href="#" class="text-secondary-500 hover:text-primary-500 transition-colors duration-300"><i data-feather="external-link"></i></a>
             </div>
           </div>
         </div>
 
       </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-32 text-center" data-label="04. Contact">
-      <h2
-        class="flex items-center text-2xl font-semibold text-white mb-12 after:content-[''] after:ml-5 after:block after:w-64 after:h-px after:bg-gray-700">
-        <span class="text-primary-500 mr-2">04.</span> Contact
-      </h2>
-      <p class="text-primary-500 text-sm mb-4">What's Next?</p>
-      <h2 class="text-5xl font-bold text-white mb-6">Get In Touch</h2>
-      <p class="max-w-xl mx-auto mb-10">
-        I’m open to opportunities in data-driven, technical or digital roles, particularly where strategy, analytics and
+      <p class="text-primary-500 text-sm mb-4 reveal tracking-widest uppercase">What's Next?</p>
+      <h2 class="text-5xl font-bold text-white mb-6 reveal" data-delay="0.1">Get In Touch</h2>
+      <p class="max-w-xl mx-auto mb-10 reveal" data-delay="0.2">
+        I'm open to opportunities in data-driven, technical or digital roles, particularly where strategy, analytics and
         modern operations intersect.
       </p>
-      <a href="mailto:abdulkamilkarim@gmail.com"
-        class="border border-primary-500 text-primary-500 px-6 py-3 rounded hover:bg-primary-500/10 transition-all duration-300 inline-block">
-        Say Hello
-      </a>
+      <div class="reveal" data-delay="0.3">
+        <a href="mailto:abdulkamilkarim@gmail.com"
+          class="contact-email-btn border border-primary-500 text-primary-500 px-8 py-4 rounded transition-all duration-300 inline-block text-lg">
+          Say Hello
+        </a>
+      </div>
     </section>
   </main>
 
   <custom-footer></custom-footer>
+
   <!-- Side Social Links -->
-  <div class="fixed left-4 md:left-10 bottom-0 hidden md:block" style="max-width: calc(100% - 2rem)">
-    <div
-      class="flex flex-col items-center space-y-6 after:content-[''] after:block after:w-px after:h-24 after:bg-secondary-500">
+  <div class="side-links fixed left-4 md:left-10 bottom-0 hidden md:block z-50">
+    <div class="flex flex-col items-center space-y-6 side-link-line">
       <a href="https://github.com/kamillearn/"
-        class="text-secondary-500 hover:text-primary-500 hover:-translate-y-1 transition-all duration-300">
+        class="text-secondary-500 hover:text-primary-500 hover:-translate-y-1 transition-all duration-300" target="_blank">
         <i data-feather="github"></i>
       </a>
-      <a href="www.linkedin.com/in/kamil-karim"
-        class="text-secondary-500 hover:text-primary-500 hover:-translate-y-1 transition-all duration-300">
+      <a href="https://www.linkedin.com/in/kamil-karim"
+        class="text-secondary-500 hover:text-primary-500 hover:-translate-y-1 transition-all duration-300" target="_blank">
         <i data-feather="linkedin"></i>
       </a>
-      <a href="abdulkamilkarim@gmail.com"
+      <a href="mailto:abdulkamilkarim@gmail.com"
         class="text-secondary-500 hover:text-primary-500 hover:-translate-y-1 transition-all duration-300">
         <i data-feather="mail"></i>
       </a>
     </div>
   </div>
+
   <!-- Side Email -->
-  <div class="fixed right-4 md:right-10 bottom-0 hidden md:block" style="max-width: calc(100% - 2rem)">
-    <div
-      class="flex flex-col items-center space-y-6 after:content-[''] after:block after:w-px after:h-24 after:bg-secondary-500">
+  <div class="side-links fixed right-4 md:right-10 bottom-0 hidden md:block z-50">
+    <div class="flex flex-col items-center space-y-6 side-link-line">
       <a href="mailto:abdulkamilkarim@gmail.com"
-        class="text-secondary-500 text-sm hover:text-primary-500 transition-all duration-300 [writing-mode:vertical-rl]">
+        class="text-secondary-500 text-xs hover:text-primary-500 transition-all duration-300 hover:-translate-y-1 [writing-mode:vertical-rl] tracking-widest">
         abdulkamilkarim@gmail.com
       </a>
     </div>
@@ -768,9 +588,7 @@
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
   <script src="script.js"></script>
-  <script>
-    feather.replace();
-  </script>
+  <script>feather.replace();</script>
 </body>
 
 </html>
