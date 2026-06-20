@@ -294,6 +294,18 @@ class CustomNavbar extends HTMLElement {
         drawer.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', closeMenu);
         });
+
+        // Resume / CV button → open language picker modal
+        const resumeBtns = this.shadowRoot.querySelectorAll('.resume-btn, .resume-btn-mobile');
+        resumeBtns.forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                closeMenu();
+                if (typeof window.openModal === 'function') {
+                    window.openModal('cv');
+                }
+            });
+        });
     }
 }
 

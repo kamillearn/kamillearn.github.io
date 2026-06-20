@@ -533,6 +533,202 @@ body::before {
 }
 
 /* ================================
+   Modals
+================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 10, 22, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 8000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    background: #0d1b36;
+    border: 1px solid rgba(100, 255, 218, 0.14);
+    border-radius: 14px;
+    padding: 2.5rem 2.5rem 2rem;
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(100, 255, 218, 0.06);
+}
+
+.modal-overlay.open .modal-card {
+    transform: scale(1) translateY(0);
+}
+
+.modal-legal {
+    max-width: 640px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding-right: 1.5rem;
+    /* custom scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 255, 218, 0.25) transparent;
+}
+
+.modal-legal::-webkit-scrollbar { width: 4px; }
+.modal-legal::-webkit-scrollbar-track { background: transparent; }
+.modal-legal::-webkit-scrollbar-thumb { background: rgba(100, 255, 218, 0.25); border-radius: 4px; }
+
+/* Close button */
+.modal-close {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    color: #8892b0;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.modal-close:hover {
+    color: #64ffda;
+    background: rgba(100, 255, 218, 0.08);
+}
+
+/* Modal header text */
+.modal-eyebrow {
+    font-size: 0.72rem;
+    color: #64ffda;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.modal-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e6f1ff;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.modal-subtitle {
+    font-size: 0.9rem;
+    color: #8892b0;
+    margin-bottom: 2rem;
+}
+
+/* CV download grid */
+.modal-cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.modal-cv-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    background: rgba(100, 255, 218, 0.05);
+    border: 1px solid rgba(100, 255, 218, 0.15);
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ccd6f6;
+    text-align: center;
+    transition: background 0.25s ease, border-color 0.25s ease,
+                transform 0.2s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.modal-cv-btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    border-color: rgba(100, 255, 218, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(100, 255, 218, 0.12);
+    color: #e6f1ff;
+}
+
+.modal-cv-btn:active {
+    transform: scale(0.97) translateY(0);
+}
+
+.modal-cv-flag {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.modal-cv-btn strong {
+    display: block;
+    font-size: 0.88rem;
+    color: #e6f1ff;
+    font-weight: 600;
+}
+
+.modal-cv-btn small {
+    font-size: 0.72rem;
+    color: #64ffda;
+    letter-spacing: 0.06em;
+}
+
+/* Legal modal body */
+.modal-legal-body {
+    font-size: 0.88rem;
+    color: #8892b0;
+    line-height: 1.8;
+    margin-top: 1.25rem;
+}
+
+.modal-legal-body h3 {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #ccd6f6;
+    margin: 1.5rem 0 0.4rem;
+}
+
+.modal-legal-body h3:first-child { margin-top: 0; }
+
+.modal-legal-body p {
+    margin-bottom: 0.5rem;
+}
+
+.modal-legal-body a {
+    color: #64ffda;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.25);
+    transition: border-color 0.2s ease;
+}
+
+.modal-legal-body a:hover {
+    border-color: #64ffda;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .modal-card { padding: 2rem 1.5rem 1.5rem; }
+    .modal-cv-grid { grid-template-columns: 1fr; }
+    .modal-legal { max-height: 80vh; }
+}
+
+/* ================================
    Reduced Motion
 ================================ */
 @media (prefers-reduced-motion: reduce) {
