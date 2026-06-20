@@ -225,4 +225,51 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('section[id] > h2.reveal').forEach(h => {
         h.setAttribute('data-delay', '0');
     });
+
+    /* =========================================
+       MODAL SYSTEM
+    ========================================= */
+    const modals = document.querySelectorAll('.modal-overlay');
+
+    window.openModal = function (id) {
+        const modal = document.getElementById('modal-' + id);
+        if (!modal) return;
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        // Focus the close button for accessibility
+        const closeBtn = modal.querySelector('.modal-close');
+        if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+    };
+
+    window.closeModal = function (id) {
+        const modal = document.getElementById('modal-' + id);
+        if (!modal) return;
+        modal.classList.remove('open');
+        // Only restore scroll if no other modals are open
+        if (!document.querySelector('.modal-overlay.open')) {
+            document.body.style.overflow = '';
+        }
+    };
+
+    modals.forEach(modal => {
+        const id = modal.id.replace('modal-', '');
+
+        // Close on backdrop click (not on card click)
+        modal.addEventListener('click', e => {
+            if (e.target === modal) window.closeModal(id);
+        });
+
+        // Close button
+        const closeBtn = modal.querySelector('.modal-close');
+        if (closeBtn) closeBtn.addEventListener('click', () => window.closeModal(id));
+    });
+
+    // Close any open modal on Escape key
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal-overlay.open').forEach(m => {
+                window.closeModal(m.id.replace('modal-', ''));
+            });
+        }
+    });
 });
