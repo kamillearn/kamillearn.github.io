@@ -10,8 +10,8 @@ class CustomNavbar extends HTMLElement {
                     left: 0;
                     right: 0;
                     width: 100%;
-                    z-index: 100;
-                    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+                    z-index: 1000;
+                    transition: box-shadow 0.3s ease;
                 }
 
                 nav {

@@ -76,6 +76,13 @@ img, video {
 }
 
 /* ================================
+   Navbar clearance — ensures content never hides under the fixed header
+================================ */
+main {
+    padding-top: 72px; /* matches navbar height on all screen sizes */
+}
+
+/* ================================
    Background Grid
 ================================ */
 body::before {

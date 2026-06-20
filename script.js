@@ -155,43 +155,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /* =========================================
-       NAVBAR: scroll shadow + hide/show on direction
+       NAVBAR: scroll shadow (always visible)
     ========================================= */
     const navbar = document.querySelector('custom-navbar');
-    let lastScrollY = window.scrollY;
-    let scrollDir = 'up';
-    let navbarHidden = false;
 
     function handleNavbarScroll() {
         const currentY = window.scrollY;
         const navEl = navbar?.shadowRoot?.querySelector('nav');
 
-        // Shadow
         if (navEl) {
             navEl.style.boxShadow = currentY > 10
-                ? '0 2px 24px rgba(0,0,0,0.35)'
+                ? '0 2px 24px rgba(0,0,0,0.45)'
                 : 'none';
         }
-
-        // Hide on scroll down (past hero), reveal on scroll up
-        if (currentY > 80) {
-            if (currentY > lastScrollY + 4) {
-                if (!navbarHidden) {
-                    navbar.style.transform = 'translateY(-100%)';
-                    navbarHidden = true;
-                }
-            } else if (currentY < lastScrollY - 4) {
-                if (navbarHidden) {
-                    navbar.style.transform = 'translateY(0)';
-                    navbarHidden = false;
-                }
-            }
-        } else {
-            navbar.style.transform = 'translateY(0)';
-            navbarHidden = false;
-        }
-
-        lastScrollY = currentY;
     }
 
     /* =========================================
