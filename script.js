@@ -272,4 +272,59 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
+
+    /* =========================================
+       CV VIEWER — language toggle
+    ========================================= */
+    const cvFrame       = document.getElementById('cv-frame');
+    const cvFallback    = document.getElementById('cv-fallback');
+    const cvDownload    = document.getElementById('cv-download-link');
+    const cvFallbackEn  = document.getElementById('cv-fallback-en');
+    const cvFallbackDe  = document.getElementById('cv-fallback-de');
+    const cvLangBtns    = document.querySelectorAll('.cv-lang-btn');
+
+    function setCvLanguage(src, downloadHref) {
+        if (cvFrame)    cvFrame.src = src;
+        if (cvDownload) cvDownload.href = downloadHref;
+        // Keep fallback links in sync too
+        if (cvFallbackEn) cvFallbackEn.href = downloadHref;
+    }
+
+    cvLangBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const src = btn.dataset.src;                        // e.g. cv_en.pdf#toolbar=0&navpanes=0
+            const downloadHref = src.split('#')[0];            // strip hash for download attr
+
+            // Update toggle active state
+            cvLangBtns.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+
+            setCvLanguage(src, downloadHref);
+
+            // Sync fallback download buttons
+            const isEn = src.startsWith('cv_en');
+            if (cvFallbackEn) cvFallbackEn.style.display = isEn ? '' : 'none';
+            if (cvFallbackDe) cvFallbackDe.style.display = isEn ? 'none' : '';
+        });
+    });
+
+    // Detect if the iframe can't render the PDF (e.g. some mobile browsers)
+    // and show the download fallback instead
+    if (cvFrame) {
+        cvFrame.addEventListener('load', () => {
+            try {
+                // If the iframe loaded but is empty / shows error page, contentDocument will be
+                // either null (cross-origin PDF) or have no body text — treat that as success.
+                // We only show fallback if the src is a PDF and the device explicitly blocked it.
+            } catch (_) { /* cross-origin, PDF rendered natively — fine */ }
+        });
+        cvFrame.addEventListener('error', () => {
+            cvFrame.classList.add('hidden');
+            if (cvFallback) cvFallback.classList.add('visible');
+        });
+    }
 });

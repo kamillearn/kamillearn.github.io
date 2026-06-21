@@ -586,24 +586,67 @@
   </div>
 
   <!-- ==============================
-       MODAL: CV / Resume Picker
+       MODAL: CV / Resume Viewer
   ============================== -->
   <div id="modal-cv" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-cv-title">
-    <div class="modal-card">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <p class="modal-eyebrow">Download</p>
-      <h2 class="modal-title" id="modal-cv-title">Choose Language</h2>
-      <p class="modal-subtitle">Select the version of my CV you'd like to download.</p>
-      <div class="modal-cv-grid">
-        <a href="assets/cv_en.pdf" download class="modal-cv-btn">
-          <span class="modal-cv-flag">🇬🇧</span>
-          <strong>Download CV</strong>
-          <small>English &middot; PDF</small>
-        </a>
-        <a href="assets/cv_de.pdf" download class="modal-cv-btn">
-          <span class="modal-cv-flag">🇩🇪</span>
-          <strong>Lebenslauf herunterladen</strong>
-          <small>Deutsch &middot; PDF</small>
+    <div class="modal-card modal-cv-card">
+      <div class="modal-cv-header">
+        <div>
+          <p class="modal-eyebrow">Resume</p>
+          <h2 class="modal-title" id="modal-cv-title">Kamil Karim — CV</h2>
+        </div>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+
+      <!-- Language toggle -->
+      <div class="cv-lang-toggle" role="group" aria-label="CV language">
+        <button class="cv-lang-btn active" data-src="cv_en.pdf#toolbar=0&navpanes=0" aria-pressed="true">
+          <span>🇬🇧</span> English CV
+        </button>
+        <button class="cv-lang-btn" data-src="cv_de.pdf#toolbar=0&navpanes=0" aria-pressed="false">
+          <span>🇩🇪</span> Lebenslauf (DE)
+        </button>
+      </div>
+
+      <!-- PDF iframe -->
+      <div class="cv-frame-wrapper">
+        <iframe
+          id="cv-frame"
+          src="cv_en.pdf#toolbar=0&navpanes=0"
+          width="100%"
+          height="100%"
+          style="border:none; display:block;"
+          title="CV Preview"
+          loading="lazy"
+        ></iframe>
+        <!-- Fallback shown when iframe PDF fails (mobile browsers) -->
+        <div class="cv-fallback" id="cv-fallback">
+          <p>PDF preview is not available on this device.</p>
+          <div class="cv-fallback-btns">
+            <a id="cv-fallback-en" href="cv_en.pdf" download class="modal-cv-btn">
+              <span class="modal-cv-flag">🇬🇧</span>
+              <strong>Download CV</strong>
+              <small>English &middot; PDF</small>
+            </a>
+            <a id="cv-fallback-de" href="cv_de.pdf" download class="modal-cv-btn">
+              <span class="modal-cv-flag">🇩🇪</span>
+              <strong>Lebenslauf herunterladen</strong>
+              <small>Deutsch &middot; PDF</small>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download link below viewer -->
+      <div class="cv-download-row">
+        <a id="cv-download-link" href="cv_en.pdf" download class="cv-download-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download this CV
         </a>
       </div>
     </div>
